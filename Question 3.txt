@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+int search(int arr[],int low,int high,int key)
+{
+for(int i=low;i<=high;i++)
+{
+if(key==arr[i])
+return i;
+}
+return -1;
+}
+int main(){
+int n,i,a[10],noc,key;
+cout<<"enter the no of elements:";
+ cin>>n;
+ for(i=0;i<n;i++)
+ {
+ cin>>a[i];
+ }
+ cout<<"enter key value to be compared:";
+ cin>>key;
+if(a[0]==key)
+i=1;
+while(i<n&&a[i]<key)
+{
+i=i*2;
+}
+int result=search(a,i/2,min(i,n-1),key);
+(result==-1)?
+cout<<"element is not present":
+cout<<"element is  present";
+return 0;
+}
+
